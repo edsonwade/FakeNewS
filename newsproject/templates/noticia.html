@@ -1,0 +1,36 @@
+{% extends 'layout.html' %} {% block body %}
+</br>
+<h1>{{noticia.titulo}}</h1>
+<small><b>Autor:</b> {{noticia.autor}} / <b>Fonte:</b> {{noticia.fonte}}</small> </br>
+<small><b>Publicado em:</b> {{noticia.datapublicacao}}</small>
+<hr>
+<div align="center">
+    {% if noticia.urlimagem %}
+    <img src="{{noticia.urlimagem}}" class="media-object  img-responsive img-thumbnail"> {% else %}
+    <img src="http://www.adbazar.pk/frontend/images/default-image.jpg" class="media-object  img-responsive img-thumbnail"> {% endif %}
+</div>
+</br>
+<div>
+    {{noticia.descricao | safe}}
+    </br>
+    </br>
+    <p><b>You can read the complete news at:</b> <a href="{{noticia.urlnoticia}}" target="_blank">{{noticia.fonte}}</a>
+        <p>
+            <p><b>Evaluation:</b> {{verdade}} % de verdade</p>
+            </br>
+            <p><u>Rated points</u> (You can use these points to do your own analysis) :
+                <p>
+                    <p>Publication date--> If it was published more or less than 31 days ago
+                        <p>
+                            <p>Relationship between the results returned by the API and the news accepted for comparison
+                                <p>
+                                    <p>Similarity media with compared news
+                                        <p>
+                                            <p>Author -->There is or not
+                                                <p>
+                                                    <p>Source --> There is or not
+                                                        <p>
+                                                            <p>Image--> There is or not
+                                                                <p>
+</div>
+{% endblock %}
